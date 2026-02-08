@@ -1,0 +1,15 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="150" cy="150" r="140" fill="#fff5f5" stroke="#ffcccc" stroke-width="5"/>
+  <!-- Snoopy Head -->
+  <path d="M100,150 Q100,50 200,100 T200,200 Q150,250 100,200 Z" fill="white" stroke="black" stroke-width="5"/>
+  <!-- Ear -->
+  <ellipse cx="140" cy="140" rx="20" ry="40" fill="black"/>
+  <!-- Nose -->
+  <circle cx="210" cy="110" r="8" fill="black"/>
+  <!-- Eye -->
+  <path d="M170,100 Q180,90 190,100" fill="none" stroke="black" stroke-width="3"/>
+  <!-- Heart -->
+  <path d="M220,50 Q240,30 260,50 T260,90 Q240,110 220,130 Q200,110 180,90 T180,50 Q200,30 220,50" fill="red"/>
+  <text x="90" y="250" font-family="Arial" font-size="20" fill="#ff4d4d">Be Mine?</text>
+</svg>

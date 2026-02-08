@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine? 💌</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap"
+        rel="stylesheet">
+    <meta property="og:title" content="A Special Question for You... 💌">
+    <meta property="og:description" content="Click to see a surprise!">
+    <meta property="og:image" content="assets/snoopy_asking.png">
+</head>
+
+<body>
+
+    <!-- Intro Screen -->
+    <div id="intro-screen" class="screen active">
+        <div class="sky-background">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+        </div>
+        <div class="flying-snoopy-container">
+            <img src="assets/snoopy_flying.svg" alt="Snoopy Flying" id="flying-snoopy">
+        </div>
+        <div class="tap-hint">Tap to Open 💌</div>
+    </div>
+
+    <!-- Main Card Screen -->
+    <div id="main-screen" class="screen hidden">
+        <div class="card">
+            <img src="assets/snoopy_asking.svg" alt="Cute Snoopy" class="snoopy-img">
+            <h1>Will you be my Valentine?</h1>
+            <div class="buttons">
+                <button id="yes-btn">Yes 💖</button>
+                <button id="no-btn">No 💔</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Screen -->
+    <div id="success-screen" class="screen hidden">
+        <div class="celebration-container">
+            <img src="assets/snoopy_celebration.svg" alt="Happy Snoopy" class="celebration-img">
+            <h1>YAY! ❤️</h1>
+            <p>Best Valentine Ever!</p>
+        </div>
+        <canvas id="confetti-canvas"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

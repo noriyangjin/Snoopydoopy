@@ -1,0 +1,224 @@
+:root {
+    --bg-color: #ffe6e6;
+    --card-bg: #ffffff;
+    --primary-color: #ff4d4d;
+    --hover-color: #ff1a1a;
+    --text-color: #4a4a4a;
+    --sky-blue: #87CEEB;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Nunito', sans-serif;
+    overflow: hidden;
+    background-color: var(--bg-color);
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.active {
+    display: flex;
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* --- Intro Screen --- */
+#intro-screen {
+    background-color: var(--sky-blue);
+    cursor: pointer;
+    flex-direction: column;
+}
+
+.sky-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.cloud {
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.cloud-1 { width: 100px; height: 40px; top: 10%; left: 10%; animation: float 10s infinite linear; }
+.cloud-2 { width: 140px; height: 60px; top: 20%; left: 60%; animation: float 15s infinite linear reverse; }
+.cloud-3 { width: 80px; height: 30px; top: 50%; left: 30%; animation: float 12s infinite linear; }
+
+@keyframes float {
+    from { transform: translateX(-20px); }
+    to { transform: translateX(20px); }
+}
+
+.flying-snoopy-container {
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+#flying-snoopy {
+    width: 200px; /* Adjust based on image */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: flyAcross 5s linear infinite;
+}
+
+@keyframes flyAcross {
+    0% { left: -250px; transform: translateY(-50%) rotate(-5deg); }
+    50% { transform: translateY(-60%) rotate(5deg); }
+    100% { left: 100%; transform: translateY(-50%) rotate(-5deg); }
+}
+
+.tap-hint {
+    z-index: 2;
+    margin-top: 50px;
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'Fredoka One', cursive;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* --- Main Card Screen --- */
+#main-screen {
+    background-color: var(--bg-color);
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 90%;
+    width: 400px;
+}
+
+.snoopy-img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-family: 'Fredoka One', cursive;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    min-height: 80px; /* Space for growing buttons */
+}
+
+button {
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Fredoka One', cursive;
+    transition: all 0.2s ease;
+}
+
+#yes-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#yes-btn:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+#no-btn {
+    background-color: #e0e0e0;
+    color: var(--text-color);
+}
+
+/* --- Success Screen --- */
+#success-screen {
+    background-color: #fff0f5;
+    flex-direction: column;
+}
+
+.celebration-container {
+    text-align: center;
+    z-index: 2;
+}
+
+.celebration-img {
+    width: 300px;
+    max-width: 90%;
+}
+
+#confetti-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 450px) {
+    #flying-snoopy {
+        width: 150px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+        width: 85%;
+    }
+
+    .buttons {
+        gap: 15px;
+    }
+
+    button {
+        padding: 8px 20px;
+        font-size: 1rem;
+    }
+}
